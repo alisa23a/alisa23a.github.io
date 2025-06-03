@@ -5,7 +5,32 @@
     <title>Тестовая страница</title>
 </head>
 <body>
-    <h1>Привет, мир!</h1>
-    <p>Это простая тестовая HTML-страница.</p>
+<script>
+
+export default function ContactCard() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white px-4">
+      <div className="max-w-md w-full bg-gray-100 rounded-2xl shadow-lg p-8 space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Алиса Фамина</h1>
+          <p className="text-gray-600 mt-1">Создание веб-приложений, ИИ-контент, тексты</p>
+        </div>
+        <div className="border-t border-gray-300 pt-4 space-y-2">
+          <p className="text-gray-800">• Написание и редактирование текстов</p>
+          <p className="text-gray-800">• Создание изображений с использованием ИИ</p>
+          <p className="text-gray-800">• Разработка одностраничных веб-приложений</p>
+        </div>
+        <div className="border-t border-gray-300 pt-4">
+          <p className="text-sm text-gray-500">По вопросам сотрудничества:</p>
+          <a href="mailto:alisa@example.com" className="text-blue-600 hover:underline">
+            alisa@example.com
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+</script>
 </body>
 </html>
