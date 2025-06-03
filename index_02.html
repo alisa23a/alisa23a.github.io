@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алиса Фамина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+body {
+
+
+
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  background: #000;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 99999px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+	0% {
+    top: -100px;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+	100% { 
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+
+
+
+
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+      color: #1f2937;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #4b5563;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: none;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      scroll-margin-top: 6rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Алиса Фамина</h1>
+    <p>Создание веб-приложений, ИИ-контент, тексты</p>
+    <nav>
+      <a href="#texts">Написание и редактирование текстов</a>
+      <a href="#images">Создание изображений с ИИ</a>
+      <a href="#apps">Разработка веб-приложений</a>
+    </nav>
+  </header>
+
+  <section id="texts">
+    <h2>Написание и редактирование текстов</h2>
+	
+<div class="fade"></div>
+
+<section class="star-wars">
+  <div class="crawl">
+    <div class="title">
+      <p>Episode IV</p>
+      <h1>A New Hope</h1>
+    </div>
+    
+    <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
+      
+      <p>During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
+
+    <p>Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy….</p>
+  </div>
+</section>
+  </section>
+
+  <section id="images">
+    <h2>Создание изображений с использованием ИИ</h2>
+  </section>
+
+  <section id="apps">
+    <h2>Разработка одностраничных веб-приложений</h2>
+  </section>
+
+  <footer>
+    По вопросам сотрудничества: <a href="mailto:alisa@example.com">alisa@example.com</a><br/>
+    &copy; 2025 Алиса Фамина
+  </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Wars Text Loop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: #feda4a;
+      font-family: 'Nunito', sans-serif;
+      overflow: hidden;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: white;
+      margin: 2rem 0 1rem;
+    }
+
+    .star-wars-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      perspective: 400px;
+    }
+
+    .star-wars-content {
+      position: absolute;
+      width: 100%;
+      height: 200%;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      animation: scroll-loop 60s linear infinite;
+      transform-origin: 50% 100%;
+      transform: rotateX(25deg) translateZ(0);
+    }
+
+    .star-wars-text {
+      width: 100%;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    @keyframes scroll-loop {
+      0% {
+        transform: rotateX(25deg) translateY(0);
+      }
+      100% {
+        transform: rotateX(25deg) translateY(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="section-title">Написание и редактирование текстов</div>
+  <section class="star-wars-section">
+    <div class="star-wars-content">
+      <div class="star-wars-text">
+        <p>Создание уникального контента для сайтов, блогов, презентаций и рекламных материалов. Тексты под любые цели: от инструкций до художественных описаний. Корректура, редактирование и стилистическая правка. Языковая адаптация и улучшение читабельности. Концентрированное внимание к тону, стилю и структуре. Работа с исходными черновиками или создание с нуля.</p>
+        <p>Создание уникального контента для сайтов, блогов, презентаций и рекламных материалов. Тексты под любые цели: от инструкций до художественных описаний. Корректура, редактирование и стилистическая правка. Языковая адаптация и улучшение читабельности. Концентрированное внимание к тону, стилю и структуре. Работа с исходными черновиками или создание с нуля.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

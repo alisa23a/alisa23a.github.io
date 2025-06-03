@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бесконечный текст</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      font-family: 'Pathway Gothic One', sans-serif;
+    }
+
+    .infinite-crawl-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      perspective: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .infinite-crawl-wrapper {
+      position: absolute;
+      bottom: -100%;
+      width: 60vw;
+      animation: scroll-loop 40s linear infinite;
+      transform-origin: 50% 100%;
+    }
+
+    .infinite-crawl {
+      transform: rotateX(25deg);
+      color: #feda4a;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      line-height: 150%;
+      text-align: justify;
+    }
+
+    @keyframes scroll-loop {
+      0% {
+        bottom: -100%;
+        transform: rotateX(25deg) translateZ(0);
+      }
+      100% {
+        bottom: 100%;
+        transform: rotateX(25deg) translateZ(-2000px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="infinite-crawl-section">
+    <div class="infinite-crawl-wrapper">
+      <div class="infinite-crawl">
+        <p>Написание и редактирование текстов</p>
+        <p>Создание сюжетов, редактирование диалогов, проработка персонажей, структурирование повествования</p>
+        <p>Написание и редактирование текстов</p>
+        <p>Создание сюжетов, редактирование диалогов, проработка персонажей, структурирование повествования</p>
+        <p>Написание и редактирование текстов</p>
+        <p>Создание сюжетов, редактирование диалогов, проработка персонажей, структурирование повествования</p>
+        <p>Написание и редактирование текстов</p>
+        <p>Создание сюжетов, редактирование диалогов, проработка персонажей, структурирование повествования</p>
+        <!-- Дублируй блоки столько, сколько нужно для бесшовности -->
+      </div>
+    </div>
+  </section>
+</body>
+</html>

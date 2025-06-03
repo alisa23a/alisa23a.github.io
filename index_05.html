@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесконечный текст</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        .scrolling-section {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        
+        .scrolling-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            left: 0;
+            top: 100vh;
+            animation: scrollUp linear;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes scrollUp {
+            100% {
+                transform: translateY(calc(-100vh - 100%));
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="scrolling-section" id="scroller">
+        <p class="scrolling-text">Частная школа, в которой училась их цель, видела многое за свои годы. У неё была своя история, традиции, множество наград от министерства и гнилые трубы под землёй. Школа занимала целый квартал в старой части города, и уже неделю улица у главных ворот была разрыта. Меняли трубы. Поэтому лимузин, приезжавший каждый день, чтобы забрать девочку, останавливался теперь за углом, и водитель шёл за своей подопечной к воротам. На разрытую улочку выходили два узких переулка, прореза́вших соседний квартал, и образовывали с ней Тэ-образные перекрёстки. Лимузин сел бы там брюхом на первом же ухабе, а вот микроавтобус, с высоким дорожным просветом, прошёл легко. Макс сдал в переулок задом с параллельной улицы и припарковался у обочины в двадцати метрах от улицы перед школой. Он вышел и поглядел на часы. В одном кармане его куртки булькал флакон с хлороформом, в другом лежала тряпка.</p>
+    </section>
+
+    <script>
+        const section = document.getElementById('scroller');
+        const initialText = document.querySelector('.scrolling-text');
+        const duration = 5000; // 5 секунд на полный цикл
+        
+        // Запускаем первый текст
+        startTextAnimation(initialText);
+        
+        function startTextAnimation(textElement) {
+            // Устанавливаем длительность анимации
+            textElement.style.animationDuration = duration + 'ms';
+            
+            // Рассчитываем время, когда текст полностью появится на экране
+            const textHeight = textElement.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const appearTime = (duration * textHeight) / (textHeight + viewportHeight);
+            
+            // Запускаем новый текст в момент полного появления текущего
+            setTimeout(() => {
+                const newText = textElement.cloneNode(true);
+                section.appendChild(newText);
+                startTextAnimation(newText);
+            }, appearTime);
+            
+            // Удаляем текст после завершения анимации
+            textElement.addEventListener('animationend', () => {
+                textElement.remove();
+            });
+        }
+        
+        // Обработчик изменения размера окна
+        window.addEventListener('resize', () => {
+            // При изменении размера перезапускаем анимацию для всех текстов
+            const allTexts = document.querySelectorAll('.scrolling-text');
+            allTexts.forEach(text => {
+                text.style.animation = 'none';
+                void text.offsetWidth; // Триггер reflow
+                text.style.animation = '';
+                text.style.animationDuration = duration + 'ms';
+            });
+        });
+    </script>
+</body>
+</html>
