@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Алиса Фамина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,26 +15,26 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Nunito', sans-serif;
       background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
       color: #1f2937;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      overflow-x: hidden;
     }
 
     header {
       padding: 2rem;
       text-align: center;
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(10px);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
       font-size: 2.5rem;
-      font-weight: 700;
-      color: #111827;
+      font-weight: 800;
     }
 
     header p {
@@ -40,35 +43,37 @@
       color: #4b5563;
     }
 
-    main {
-      flex: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    nav {
+      display: flex;
+      justify-content: center;
       gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: none;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 2rem;
+      scroll-margin-top: 6rem;
     }
 
-    .card {
-      background-color: #ffffffee;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      padding: 2rem;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #1f2937;
-    }
-
-    .card p {
-      margin: 0.5rem 0;
-      color: #374151;
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
     }
 
     footer {
@@ -77,40 +82,34 @@
       font-size: 0.9rem;
       color: #6b7280;
     }
-
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
   <header>
     <h1>Алиса Фамина</h1>
     <p>Создание веб-приложений, ИИ-контент, тексты</p>
+    <nav>
+      <a href="#texts">Написание и редактирование текстов</a>
+      <a href="#images">Создание изображений с ИИ</a>
+      <a href="#apps">Разработка веб-приложений</a>
+    </nav>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>Услуги</h2>
-      <p>• Написание и редактирование текстов</p>
-      <p>• Создание изображений с использованием ИИ</p>
-      <p>• Разработка одностраничных веб-приложений</p>
-    </div>
+  <section id="texts">
+    <h2>Написание и редактирование текстов</h2>
+  </section>
 
-    <div class="card">
-      <h2>Контакты</h2>
-      <p>По вопросам сотрудничества:</p>
-      <p><a href="mailto:alisa@example.com">alisa@example.com</a></p>
-    </div>
-  </main>
+  <section id="images">
+    <h2>Создание изображений с использованием ИИ</h2>
+  </section>
+
+  <section id="apps">
+    <h2>Разработка одностраничных веб-приложений</h2>
+  </section>
 
   <footer>
-    &copy; 2025 Алиса Фамина. Все права защищены.
+    По вопросам сотрудничества: <a href="mailto:alisa@example.com">alisa@example.com</a><br/>
+    &copy; 2025 Алиса Фамина
   </footer>
 </body>
 </html>
